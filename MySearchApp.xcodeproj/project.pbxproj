@@ -12,10 +12,10 @@
 		116549D21BCBA0EB0022DC99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116549D01BCBA0EB0022DC99 /* Main.storyboard */; };
 		116549D41BCBA0EB0022DC99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 116549D31BCBA0EB0022DC99 /* Assets.xcassets */; };
 		116549D71BCBA0EB0022DC99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 116549D51BCBA0EB0022DC99 /* LaunchScreen.storyboard */; };
-		116549DF1BCBA1360022DC99 /* SearchItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549DE1BCBA1360022DC99 /* SearchItemTableViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		116549E11BCBA2090022DC99 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549E01BCBA2090022DC99 /* ItemTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		116549E31BCBA2F60022DC99 /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549E21BCBA2F60022DC99 /* ItemData.swift */; settings = {ASSET_TAGS = (); }; };
-		116549E51BCBCCCE0022DC99 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549E41BCBCCCE0022DC99 /* WebViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		116549DF1BCBA1360022DC99 /* SearchItemTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549DE1BCBA1360022DC99 /* SearchItemTableViewController.swift */; };
+		116549E11BCBA2090022DC99 /* ItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549E01BCBA2090022DC99 /* ItemTableViewCell.swift */; };
+		116549E31BCBA2F60022DC99 /* ItemData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549E21BCBA2F60022DC99 /* ItemData.swift */; };
+		116549E51BCBCCCE0022DC99 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116549E41BCBCCCE0022DC99 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +108,7 @@
 					116549C81BCBA0EB0022DC99 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = DF7G6E6H3M;
+						LastSwiftMigration = 0810;
 					};
 				};
 			};
@@ -267,6 +268,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.myapp.MySearchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -278,6 +280,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = jp.myapp.MySearchApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
