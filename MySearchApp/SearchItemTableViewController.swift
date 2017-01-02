@@ -62,7 +62,7 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
         //商品検索を行なう
         let inputText = searchBar.text
         //入力文字数が0文字以上かどうかチェックする
-        if inputText?.lengthOfBytes(using: String.Encoding.utf8) > 0 {
+        if (inputText?.lengthOfBytes(using: String.Encoding.utf8)) > 0 {
             //保持している商品を一旦削除
             itemDataArray.removeAll()
             
