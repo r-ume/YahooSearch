@@ -70,7 +70,7 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
             let parameter = ["appid":appid, "query":inputText]
             
             //パラメータをエンコードしたURLを作成する
-            let requestUrl = createRequestUrl(parameter)
+            let requestUrl = createRequestUrl(parameter as! [String : String])
             
             //APIをリクエストする
             request(requestUrl)
@@ -80,7 +80,7 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
     }
     
     //URL作成処理
-    func createRequestUrl(_ parameter :[String:String?]) -> String {
+    func createRequestUrl(_ parameter :[String:String]) -> String {
         var parameterString = ""
         for key in parameter.keys {
             if let value = parameter[key] {
@@ -92,7 +92,7 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
                 
                 //値をエンコードする
                 if let escapedValue =
-                    value!.addingPercentEncoding(
+                    value.addingPercentEncoding(
                         withAllowedCharacters: CharacterSet.urlQueryAllowed) {
                     parameterString += "\(key)=\(escapedValue)"
                 }
