@@ -128,16 +128,16 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
                 //Jsonで返却されたデータをパースして格納する
                 if let data = data {
                     let jsonData = try! JSONSerialization.jsonObject(
-                    with: data, options: JSONSerialization.ReadingOptions.allowFragments) as! [String:AnyObject]
+                    with: data, options: .allowFragments) as? [String:Any]
                     //データのパース処理
-                    if let resultSet = jsonData["ResultSet"] as? [String: AnyObject] {
-                        self.parseData(resultSet)
+                    if let resultSet = jsonData?["ResultSet"] as? [String: Any] {
+                        self.parseData(resultSet as [String : AnyObject])
                     }
                     
                     //テーブルの描画処理を実施
-                    DispatchQueue.main.async(execute: { () -> Void in
-                        self.tableView.reloadData()
-                    })
+                    DispatchQueue.main.async{ [weak self] in
+                        self?.tableView.reloadData()
+                    }
                 }
             } as! (Data?, URLResponse?, Error?) -> Void)
             task.resume()
