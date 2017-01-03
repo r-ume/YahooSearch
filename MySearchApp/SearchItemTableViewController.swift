@@ -110,13 +110,12 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
         if let url = URL(string: requestUrl){
             let request = URLRequest(url: url)
             
-            let task = session.dataTask(with: request, completionHandler: {
-                (data:Data?, response:URLResponse?, error:NSError?) -> Void in
+            let task = session.dataTask(with: request, completionHandler: { (data, response, error) in
                 //エラーチェック
                 if error != nil {
                     //エラー表示
                     let alert = UIAlertController(title: "エラー",
-                        message: error?.description,
+                        message: (error! as NSError).description,
                         preferredStyle: UIAlertControllerStyle.alert)
                     //UIに関する処理はメインスレッド上で行なう
                     DispatchQueue.main.async(execute: { () -> Void in
@@ -139,8 +138,8 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
                         self?.tableView.reloadData()
                     }
                 }
-            } as! (Data?, URLResponse?, Error?) -> Void)
-            task.resume()
+            })
+                task.resume()
         }
     }
     
@@ -215,7 +214,7 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
                     let request = URLRequest(url: url)
                     let task = session.dataTask(
                         with: request, completionHandler: {
-                            (data:Data?, response:URLResponse?, error:NSError?) -> Void in
+                            (data:Data?, response:URLResponse?, error:Error?) -> Void in
                         if let data = data {
                             if let image = UIImage(data: data) {
                                 //ダウンロードした画像をキャッシュに登録しておく
@@ -226,7 +225,7 @@ class SearchItemTableViewController: UITableViewController, UISearchBarDelegate 
                                 })
                             }
                         }
-                    } as! (Data?, URLResponse?, Error?) -> Void)
+                    })
                     //画像の読み込み処理開始
                     task.resume()
                 }
