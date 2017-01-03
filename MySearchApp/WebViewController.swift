@@ -16,8 +16,8 @@ class WebViewController: UIViewController {
 
         //WebViewのurlを読み込ませてWebページを表示させる
         if let itemUrl = itemUrl {
-            if let url = NSURL(string: itemUrl) {
-                let request = NSURLRequest(URL: url)
+            if let url = URL(string: itemUrl) {
+                let request = URLRequest(url: url)
                 webView.loadRequest(request)
             }
         }
